@@ -1,11 +1,13 @@
 body{
     font-family: Cormorant,serif;
+    background-color: rgb(12, 12, 12);
 }
 
 h1{
     display: inline-block;
     font-weight:400 ;
     margin: 0 32px 0 0;
+    color: #fff;
 }
 
 .navbar{
@@ -19,7 +21,7 @@ h1{
 
 .navbar a{
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     margin: 0 8px;
 }
@@ -32,8 +34,8 @@ h1{
     margin: 32px;
 }
 
-.navbar a.active{
-    border-bottom: 1px solid black;
+.navbar a.active {
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .cards{
@@ -61,15 +63,20 @@ section{
     padding: 16px;
 }
 
+.footer h1{
+    font-size:45px ;
+    font-weight: 300; 
+    color: brown;
+}
+
 .footer h3{
     font-size:45px ;
-    font-weight: 300;
-   
-    
+    font-weight: 300; 
+    color: white;
 }
 
 .footer{
-    margin: 100px 0 100px 50px;
+    margin: 100px 0 50px 200px;
     width: 40%;
     min-width: 600px;
 }
@@ -77,13 +84,14 @@ section{
 .footer p{
     padding: 0;
     margin: 0;
+    color: aliceblue;
     
 }
 
 #last{
     margin-bottom: 20px;
     display: inline-block;   
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 @media only screen and (max-width:1100px){
