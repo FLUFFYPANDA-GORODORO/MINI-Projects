@@ -2,7 +2,7 @@ import React from "react";
 import { VscArrowRight } from "react-icons/vsc";
 function Card({w,start,hover}) {
   return (
-    <div className={`bg-zinc-800 p-5 rounded-xl hover:${hover} ${w}`}>
+    <div className={`bg-zinc-800 p-5 rounded-xl hover:bg-purple-500 ${w}`}>
       <div className="w-full">
         <div className="w-full flex justify-between items-center">
           <h3>One heading</h3>
