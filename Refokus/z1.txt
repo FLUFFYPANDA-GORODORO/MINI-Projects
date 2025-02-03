@@ -1,0 +1,24 @@
+How to add locomotive on the website
+
+--> Search locomotive on google
+https://github.com/locomotivemtl/locomotive-scroll (open this github link)
+
+Click here to try locomotive Scroll v5 Beta (Press this link)
+
+Step1
+    npm install locomotive-scroll@beta
+    (put this in the terminal)
+
+Step 2
+    Press on Quick Start & put this in App.jsx
+
+    --    import LocomotiveScroll from 'locomotive-scroll';
+Step 3
+    Put this inside the function before return (return ke upar)
+
+    --    const locomotiveScroll = new LocomotiveScroll();
+
+
+npm install locomotive-scroll@beta
+import LocomotiveScroll from 'locomotive-scroll';
+const locomotiveScroll = new LocomotiveScroll();

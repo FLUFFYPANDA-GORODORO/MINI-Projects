@@ -1,0 +1,96 @@
+Framer motion intallation
+
+npm install motion
+import { useScroll } from "motion/react"
+
+const {scrollY} =  useScroll
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+      console.log("Page scroll: ", latest)
+})
+
+// jab ScrollY ke value 15 tab humko pehle value dikhani hai
+----------------------
+before
+
+
+import React, { useState } from 'react'
+import { useScroll } from "motion/react"
+
+function Work() {
+
+    // const [images,setImages] =  useState()
+
+    var images = [
+        {url:"https://images.unsplash.com/photo-1737920406899-e1cabc43a6a7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"50%",left:"50%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1738200984864-cfe24df27e36?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"56%",left:"54%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1737601325787-cbf1b5603f03?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"47%",left:"52%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1738200984745-ff5d0e49de86?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"53%",left:"47%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1738200984745-ff5d0e49de86?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"53%",left:"53%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1714296185265-b40dc8f8bd46?q=80&w=193   5&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"55%",left:"52%",isActive:false}
+    ]
+
+    const {scrollY} =  useScroll
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+      console.log("Page scroll: ", latest)
+    })
+
+  return (
+    <div className='w-full mt-2'>
+      <div className='relative max-w-screen-md mx-auto text-center'>
+        <h1 className='text-[30vw] leading-none tracing-tight font-medium select-none'>work</h1>
+        <div className='w-full h-full  absolute top-0'>
+                {images.map((elem,index) => (elem.isActive && <img className='absolute w-40 rounded-lg -translate-x-[50%] -translate-y-[50%]' src={elem.url} style={{top:elem.top,left:elem.left}} alt="" />))}
+        </div> 
+      </div>   
+    </div>
+  )
+}
+
+export default Work
+
+--------------------------------------
+
+after
+
+
+import React, { useState } from 'react'
+import { useScroll } from "motion/react"
+
+function Work() {
+
+    const [images,setImages] =  useState([
+        {url:"https://images.unsplash.com/photo-1737920406899-e1cabc43a6a7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"50%",left:"50%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1738200984864-cfe24df27e36?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"56%",left:"54%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1737601325787-cbf1b5603f03?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"47%",left:"52%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1738200984745-ff5d0e49de86?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"53%",left:"47%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1738200984745-ff5d0e49de86?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"53%",left:"53%",isActive:false},
+        {url:"https://images.unsplash.com/photo-1714296185265-b40dc8f8bd46?q=80&w=193   5&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",top:"55%",left:"52%",isActive:false}
+    ])
+
+    
+
+    const {scrollY} =  useScroll
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+      console.log("Page scroll: ", latest)
+    })
+
+  return (
+    <div className='w-full mt-2'>
+      <div className='relative max-w-screen-md mx-auto text-center'>
+        <h1 className='text-[30vw] leading-none tracing-tight font-medium select-none'>work</h1>
+        <div className='w-full h-full  absolute top-0'>
+                {images.map((elem,index) => (elem.isActive && <img className='absolute w-40 rounded-lg -translate-x-[50%] -translate-y-[50%]' src={elem.url} style={{top:elem.top,left:elem.left}} alt="" />))}
+        </div> 
+      </div>   
+    </div>
+  )
+}
+
+export default Work
+
+
+-----------------------------
+
