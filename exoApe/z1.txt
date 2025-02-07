@@ -1,0 +1,10 @@
+GSap
+
+npm i gsap
+
+
+motion
+
+npm i motion
+
+Note : jispe data-scroll laga rahe ho uske parent div pe overflow-hidden lagana hota hai nai to fucked up ho gayega
